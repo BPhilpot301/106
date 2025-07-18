@@ -1,0 +1,14 @@
+/*dividing screen into two sections, using flex*/
+
+main{
+    display: flex;
+    height: 100vh;
+}
+.list{
+    background-color: aqua;
+    flex: 4;
+}
+#form{
+    background-color: aquamarine;
+    flex: 4;
+}
