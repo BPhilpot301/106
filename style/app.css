@@ -1,14 +1,52 @@
 /*dividing screen into two sections, using flex*/
 
-main{
-    display: flex;
-    height: 100vh;
+main {
+  display: flex;
+  height: 100vh;
 }
-.list{
-    background-color: aqua;
-    flex: 4;
+
+.list {
+  background-color: aqua;
+  flex: 4;
 }
-#form{
-    background-color: aquamarine;
-    flex: 4;
+
+#form {
+  background-color: aquamarine;
+  flex: 4;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ADD these styles for better form appearance inside #form */
+#form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+#form input[type="text"],
+#form input[type="date"],
+#form input[type="number"],
+#form textarea,
+#form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#form button {
+  background-color: #00796b;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#form button:hover {
+  background-color: #004d40;
 }
