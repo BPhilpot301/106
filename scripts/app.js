@@ -16,6 +16,19 @@ function saveTask()
     //save to server
 
     console.log("Hello I am the saveButton");
+    $.ajax({
+        type: "post",
+        url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function(response)
+        {console.log(response);},
+        error: function (error)
+        {console.log(error);}
+        
+            
+        
+    });
 }
 
 function displayTask(task){
@@ -34,10 +47,45 @@ function displayTask(task){
    
 }
 
+function loadTask(){
+    $.ajax({
+        type: "get",
+        url: "http://fsdiapi.azurewebsites.net/api/tasks",
+        success: function(response)
+        {
+            console.log(response);
+        },
+        error: function(error)
+        {
+            console.log(error);
+        }
+    });
+
+}
+
+function testRequest()
+{
+    $.ajax(
+    {
+        type: "get", 
+        url: "http://fsdiapi.azurewebsites.net",
+        success: function(response){
+            let dataJSON = JSON.parse(response);
+            console.log(response);
+            console.log(dataJSON);
+        },
+        error: function(error){
+            console.log(error);
+        }
+    }
+  )
+}
+
 function init()
 {
     console.log("hello im the init");
     $("#btnSave").click(saveTask);
+    loadTask();
 }
 
 window.onload = init;// it waits until the css and the html resolved to run the logic
