@@ -77,6 +77,10 @@ function loadTask(){
     )
     
 }
+
+
+
+
 // render on the list section, only those messages created by you
 
 function testRequest()
@@ -100,6 +104,11 @@ function init()
     console.log("hello im the init");
     $("#btnSave").click(saveTask);
     loadTask();
+    document.getElementById(`clearAllBtn`).addEventListener(`click`,function(){
+        const container = 
+        document.getElementById(`cardContainer`);
+        container.innerHTML = "";
+    })
 }
 
 window.onload = init;// it waits until the css and the html resolved to run the logic
